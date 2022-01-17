@@ -22,7 +22,7 @@ User Logout
     Click Element    ${loc_linkLogout}
     
 Valid Client Login        
-    Launch EGS    ${clientURL}
+    Launch EGS Portal    ${clientURL}
     User enters valid Client email and password 
     
 Valid Login        

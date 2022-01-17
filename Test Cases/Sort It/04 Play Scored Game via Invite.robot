@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 Play Existing Scored Game via Invite
     [Tags]    Game    
-    #[Teardown]    Report Lambdatest Status    ${TEST_NAME}    ${TEST_STATUS}
+    [Teardown]    Report Lambdatest Status    ${TEST_NAME}    ${TEST_STATUS}
     Given Game Template Scoring is Enabled    ${existingSortItTemplate}
     And User send an Invite    ${existingSortItTemplate}    
     
