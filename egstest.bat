@@ -1,0 +1,1 @@
+robot -i Game -v platform:"Windows 10" -v browserName:chrome -v version:88.0 -v visual:true -v network:true -v console:true -v ROBOT_BROWSER:chrome -v build:"EGS Automated Test 03312021" -d "Test Results" "Test Cases"
