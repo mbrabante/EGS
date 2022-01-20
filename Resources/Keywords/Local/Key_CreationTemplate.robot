@@ -45,7 +45,8 @@ Get Invite Link And Launch
     
 Search for the game template
     [Arguments]    ${template}
-    Wait Until Element Is Not Visible    //td[contains(., 'No records to display')]    20   
+    ${result}    Run Keyword And Return Status    Wait Until Element Is Not Visible    //td[contains(., 'No records to display')]    20   
+    Run Keyword If    '${result}'=='False'    Reload Page    
     Wait Until Element Is Visible    ${loc_inputSearchSortItTemplate}    10
     Sleep    3s
     Input Text    ${loc_inputSearchSortItTemplate}    ${template}
@@ -75,7 +76,8 @@ The score will be recorded
     User View All Games the game template
     Wait Until Element Is Visible    ${loc_tblViewAllGames}    10
     Set Focus To Element    ${loc_tblViewAllGames}
-    #Log To Console     ${gameURL}    
+    #Log To Console     ${gameURL} 
+    Wait Until Element Is Not Visible    //td[contains(., 'No records to display')]    20   
     Table Column Should Contain    ${loc_tblViewAllGames}    6    ${gameURL}
     Element Should Contain    //td[contains(., '${gameURL}')]/../td[7]    100%
     Element Should Contain    //td[contains(., '${gameURL}')]/../td[8]    Completed   

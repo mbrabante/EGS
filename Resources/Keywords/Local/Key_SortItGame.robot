@@ -49,6 +49,7 @@ Reveal the Card
     FOR    ${i}    IN RANGE    3
         ${isVisible}    Run Keyword And Return Status    Element Should Be Visible    ${loc_imgBackCard}
         Exit For Loop If    '${isVisible}'=='False'
+        Sleep    2s
         Run Keyword If    '${isVisible}'=='True'    Press Keys    ${loc_imgBackCard}    ENTER    
     END
     
